@@ -1,12 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:Fresh1.CustomControls"
              x:Class="Fresh1.Pages.ExchangePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="customcontrols:ExtendedLabel">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="BackgroundContentColor" Value="White"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="TextColor" Value="Default"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="LabelHorizontalAlignment" Value="Center"/>
+                <Setter Property="LabelMargin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Exchange Page"
-                VerticalOptions="CenterAndExpand" 
+                VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <Grid RowSpacing="5" ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <customcontrols:ExtendedLabel Grid.Row="0" Grid.Column="0" Text="Debit"/>
+                <customcontrols:ExtendedLabel Grid.Row="1" Grid.Column="0" Text="Credit"/>
+                <customcontrols:ExtendedLabel Grid.Row="2" Grid.Column="0" Text="Base"/>
+
+                <customcontrols:ExtendedLabel Grid.Row="0" Grid.Column="1" Text="100"/>
+                <customcontrols:ExtendedLabel Grid.Row="1" Grid.Column="1" Text="200"/>
+                <customcontrols:ExtendedLabel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="300"/>
+
+                <customcontrols:ExtendedLabel Grid.Row="0" Grid.Column="2" Text="0.01"/>
+                <customcontrols:ExtendedLabel Grid.Row="1" Grid.Column="2" Text="0.02"/>
+
+            </Grid>
+            
+            <customcontrols:ExtendedLabel
+                Text="Custom label"
+                />
             <Button
                 Text="Change Theme"
                 Command="{Binding ChangeThemeCommand}"/>

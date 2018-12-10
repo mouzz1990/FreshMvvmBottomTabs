@@ -26,8 +26,11 @@ namespace Fresh1.PageModels
                     int blue = rnd.Next(255);
 
                     Color color = Color.FromRgb(red, green, blue);
+                    Color inverseColor = Color.FromRgb(255 -red, 255 -green, 255 -blue);
 
                     App.TabContainer.BarBackgroundColor = color;
+                    App.TabContainer.BarTextColor = inverseColor;
+                    
                     foreach (var p in App.TabContainer.TabbedPages)
                         (p.Parent as NavigationPage).BarBackgroundColor = color;
                 }));

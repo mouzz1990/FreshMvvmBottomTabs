@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Fresh1.CustomControls.ExtendedLabel"
+    x:Name="view">
+  <ContentView.Content>
+        <Frame 
+            HasShadow="{Binding Source={Reference view}, Path=HasShadow}"
+            CornerRadius="{Binding Source={Reference view}, Path=CornerRadius}"
+            BackgroundColor="{Binding Source={Reference view}, Path=BorderColor}"
+            HorizontalOptions="{Binding Source={Reference view}, Path=HorizontalOptions}"
+            VerticalOptions="{Binding Source={Reference view}, Path=VerticalOptions}"
+            Padding="0" Margin="0"
+            >
+            <Grid>
+                <!--<BoxView 
+                    BackgroundColor="{Binding Source={Reference view}, Path=BackgroundContentColor}"
+                    CornerRadius="{Binding Source={Reference view}, Path=CornerRadius}"
+                    Margin="{Binding Source={Reference view}, Path=BorderThickness}"
+                    />-->
+                <Frame
+                    Padding="0"
+                    HasShadow="False"
+                    BackgroundColor="{Binding Source={Reference view}, Path=BackgroundContentColor}"
+                    CornerRadius="{Binding Source={Reference view}, Path=CornerRadius}"
+                    Margin="{Binding Source={Reference view}, Path=BorderThickness}"
+                    />
+                <Label 
+                    Margin="{Binding Source={Reference view}, Path=LabelMargin}"
+                    VerticalOptions="{Binding Source={Reference view}, Path=LabelVerticalAlignment}" 
+                    HorizontalOptions="{Binding Source={Reference view}, Path=LabelHorizontalAlignment}"
+                    HorizontalTextAlignment="{Binding Source={Reference view}, Path=LabelTextHorizontalAlignment}"
+                    VerticalTextAlignment="{Binding Source={Reference view}, Path=LabelTextVerticalAlignment}"
+                    Text="{Binding Source={Reference view}, Path=Text}"
+                    TextColor="{Binding Source={Reference view}, Path=TextColor}"
+                    Font="{Binding Source={Reference view}, Path=Font}"
+                    FontAttributes="{Binding Source={Reference view}, Path=FontAttributes}"
+                    FontFamily="{Binding Source={Reference view}, Path=FontFamily}"
+                    FontSize="{Binding Source={Reference view}, Path=FontSize}"
+                    />
+            </Grid>
+        </Frame>
+  </ContentView.Content>
+</ContentView>
